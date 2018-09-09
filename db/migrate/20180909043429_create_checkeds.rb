@@ -3,7 +3,7 @@ class CreateCheckeds < ActiveRecord::Migration[5.2]
     create_table :checkeds do |t|
       t.references :user, foreign_key: true
       t.references :todo, foreign_key: true
-      t.boolean :check
+      t.boolean :check, default: true
 
       t.timestamps
     end
