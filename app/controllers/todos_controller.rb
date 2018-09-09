@@ -5,9 +5,10 @@ class TodosController < ApplicationController
 
     if user_signed_in?
       @done = Checked.select(:user_id, :todo_id).where(:user_id => current_user, :check => true).all
-      @done.each do |task|
-        @done << task.todo_id 
+      @done.each do |done_task|
+        @done << done_task.todo_id 
       end
+      how_many_done = @done.length
     end
   end
 end
