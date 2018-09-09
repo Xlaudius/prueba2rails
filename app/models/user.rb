@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :checkeds
-  has_many :todos, through: :checked
+  has_many :todos, through: :checkeds
 end

@@ -1,4 +1,6 @@
 class CheckedsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @todo = Todo.find(params[:todo_id])
     @checked = Checked.new(todo: @todo, user: current_user)
