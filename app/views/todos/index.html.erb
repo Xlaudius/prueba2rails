@@ -8,7 +8,7 @@
                         <div class="body">
                             <h5><%= todo.title %></h5>
                             <p><%= todo.description %></p>
-                            <% if @done.include?(todo.id) %>
+                            <% if @total_done.include?(todo.id) %>
                                 <%= link_to "Desmarcar!", '#', class: 'btn btn-danger' %>                                
                             <% else %>
                                 <%= link_to "Marcar!", todo_checkeds_path(todo), class: 'btn btn-success', method: :post %>
