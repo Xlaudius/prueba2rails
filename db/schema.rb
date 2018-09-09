@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_09_043429) do
+ActiveRecord::Schema.define(version: 2018_09_09_063414) do
 
   create_table "checkeds", force: :cascade do |t|
     t.integer "user_id"
     t.integer "todo_id"
-    t.boolean "check"
+    t.boolean "check", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["todo_id"], name: "index_checkeds_on_todo_id"
